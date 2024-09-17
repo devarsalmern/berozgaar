@@ -26,7 +26,7 @@ const Register = () => {
         <form onSubmit={handleRegister} className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-600 mb-2">
-              Name
+              {userData.role === "employer" ? "Company Name" : "Name"}
             </label>
             <input
               type="text"
@@ -34,7 +34,7 @@ const Register = () => {
               onChange={(e) =>
                 setUserData({ ...userData, name: e.target.value })
               }
-              placeholder="John Doe"
+              placeholder={userData.role === "employer" ? "Company XYZ" : "John Doe"}
               className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>

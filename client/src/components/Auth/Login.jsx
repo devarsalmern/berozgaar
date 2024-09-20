@@ -19,7 +19,7 @@ const Login = () => {
     }
 
     try {
-      const response = await axios.post("/api/login", credentials);
+      const response = await axios.post(`${process.env.JOB_PORTAL_API_URL}auth/signIn`);
       const { user, token } = response.data;
 
       login(user); // Save user in context
